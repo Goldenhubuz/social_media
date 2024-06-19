@@ -6,15 +6,15 @@ User = get_user_model()
 
 
 class UserCreateSerializer(serializers.ModelSerializer):
-    password2 = serializers.CharField(max_length=20)
+    password2 = serializers.CharField(max_length=20, write_only=True)
     class Meta:
         model = User
         fields = ['username', 'password', 'password2']
 
-    extra_kwargs = {
+        extra_kwargs = {
 
-        'password': {'write_only': True}
-    }
+            'password': {'write_only': True}
+        }
 
     def validate(self, data):
         password = data.get('password')
