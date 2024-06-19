@@ -1,3 +1,5 @@
 from django.contrib import admin
 
-# Register your models here.
+from .models import PostImage, Post, LikedPost, Comment, LikedComment
+
+admin.site.register([PostImage, Post, LikedPost, Comment, LikedComment])

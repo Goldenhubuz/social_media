@@ -35,6 +35,12 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 ]
 
+THIRD_APPS = [
+    'rest_framework',
+    'rest_framework_simplejwt',
+    'drf_yasg',
+]
+
 LOCAL_APPS = [
     'apps.users.apps.UsersConfig',
     'apps.post.apps.PostConfig',
@@ -42,6 +48,7 @@ LOCAL_APPS = [
     'apps.chat.apps.ChatConfig',
 ]
 
+INSTALLED_APPS += THIRD_APPS
 INSTALLED_APPS += LOCAL_APPS
 
 MIDDLEWARE = [
@@ -109,6 +116,8 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 
+MEDIA_URL = 'media/'
+MEDIA_ROOT = BASE_DIR / 'media/'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
@@ -116,3 +125,10 @@ STATIC_URL = 'static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 AUTH_USER_MODEL = 'users.User'
+
+
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework_simplejwt.authentication.JWTAuthentication',
+    )
+}

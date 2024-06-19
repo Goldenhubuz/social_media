@@ -23,7 +23,7 @@ class Post(models.Model):
     likes = models.IntegerField(default=0)
 
     def str(self):
-        return str(self.caption)
+        return self.caption
 
 
 class PostImage(models.Model):
