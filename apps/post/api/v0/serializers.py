@@ -53,15 +53,24 @@ class PostUpdateSerializer(serializers.ModelSerializer):
 
 class PostListSerializer(serializers.ModelSerializer):
     tags = TagSerializer(many=True)
+    likes = serializers.SerializerMethodField()
 
     class Meta:
         model = Post
         fields = '__all__'
 
+    def get_likes(self, obj):
+        likes = LikedPost.objects.filter(post=obj)
+        serializer = LikePostSerializer(likes, many=True)
+        return serializer.data
+
+
 class UserSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
         fields = ['username']
+
+
 class LikePostSerializer(serializers.ModelSerializer):
     user = UserSerializer()
 
