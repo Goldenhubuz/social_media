@@ -35,6 +35,8 @@ schema_view = get_schema_view(
 urlpatterns = [
     path('admin/', admin.site.urls),
 
+    path('chat/', include('apps.chat.urls')),
+
     path('api/token/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
     path('api/token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
 
@@ -47,6 +49,7 @@ api_urls = [
     path('api/v0/user/', include('apps.users.api.v0.urls')),
     path('api/v0/post/', include('apps.post.api.v0.urls')),
     path('api/v0/follow/', include('apps.follower.api.v0.urls')),
+    # path('api/v0/chat/', include('apps.chat.api.v0.urls')),
 ]
 
 urlpatterns += api_urls

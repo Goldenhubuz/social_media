@@ -45,7 +45,7 @@ class Comment(models.Model):
     body = models.CharField(max_length=150)
     created = models.DateTimeField(auto_now_add=True)
     id = models.CharField(max_length=100, default=uuid.uuid4, unique=True, primary_key=True, editable=True)
-    parent = models.ForeignKey('self', on_delete=models.CASCADE, related_name='git ', null=True, blank=True)
+    parent = models.ForeignKey('self', on_delete=models.CASCADE, related_name='children', null=True, blank=True)
 
     def __str__(self):
         try:
