@@ -48,6 +48,7 @@ LOCAL_APPS = [
     'apps.post.apps.PostConfig',
     'apps.follower.apps.FollowerConfig',
     'apps.chat.apps.ChatConfig',
+    'apps.notification.apps.NotificationConfig',
 ]
 
 INSTALLED_APPS += THIRD_APPS

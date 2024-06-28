@@ -1,3 +1,4 @@
+from drf_yasg.utils import swagger_auto_schema
 from rest_framework.generics import (CreateAPIView,
                                      UpdateAPIView,
                                      ListAPIView,
@@ -58,11 +59,12 @@ post_list = PostListAPIView.as_view()
 class LikePostAPIView(APIView):
     permission_classes = [IsAuthenticated]
 
+    @swagger_auto_schema(operation_description="description")
     def post(self, request):
         post_id = request.data.get('id')
         post = Post.objects.get(id=post_id)
         like = LikedPost.objects.filter(post=post,
-                                        user=request.user).exists()
+                                        user=request.user).first()
         if not like:
             LikedPost.objects.create(user=request.user, post=post)
 

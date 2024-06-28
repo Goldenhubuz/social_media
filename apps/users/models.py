@@ -10,5 +10,5 @@ class User(AbstractUser):
     bio = models.TextField(null=True, blank=True)
     location = models.URLField(max_length=20, null=True, blank=True)
 
-    def str(self):
-        return self.username
+    def __str__(self):
+        return f"{self.username} {self.pk}"
