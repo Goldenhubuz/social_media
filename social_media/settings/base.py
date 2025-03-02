@@ -28,6 +28,7 @@ SECRET_KEY = 'django-insecure-r^qmvlsje5%9@1uho0$mqdmh1mcq3qcb4!)*oyvf56omx+#xzj
 
 INSTALLED_APPS = [
     'daphne',
+    'jazzmin',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',

@@ -1,0 +1,10 @@
+Django
+djangorestframework
+djangorestframework-simplejwt
+pillow
+drf-yasg
+daphne
+django-cors-headers
+django-channels
+channels
+django-jazzmin

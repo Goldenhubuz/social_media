@@ -1,6 +1,0 @@
-curl -X POST http://127.0.0.1/api/v0/post/create/ \
-  -H 'Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzE5MTcwMjI4LCJpYXQiOjE3MTkxNjk5MjgsImp0aSI6IjVmNjdiOWMxMzYzNDQ1YjU5ZmY5NWYxYWU5NWE2NDdiIiwidXNlcl9pZCI6MX0.Sk3e_Hr15oVgh4xXh3QglUkTkYa9SdltX8FWnB2sBU8' \
-  -F 'caption=This is a test post' \
-  -F 'tags=[{"name":"tag1"},{"name":"tag2"}]' \
-  -F 'images[0]=/home/bobur/PDP/P18/social_media/social_media/media/posts/download.jpeg' \
-  -F 'images[1]=/home/bobur/PDP/P18/social_media/social_media/media/posts/download.jpeg'
